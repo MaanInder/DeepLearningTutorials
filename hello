@@ -1,0 +1,5 @@
+import theano
+import theano.tensor as T
+import numpy
+zero_one_loss = T.sum(T.neq(T.argmax(p_y_given_x), y))
+NLL = -T.sum(T.log(p_y_given_x)[T.arange(y.shape[0]), y])
